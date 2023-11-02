@@ -60,6 +60,68 @@
 		"key": "d",
 		"when": "filesExplorerFocus && !inputFocus"
 	},
+	{
+		"key": "c",
+		"command": "filesExplorer.copy",
+		"when": "filesExplorerFocus && !inputFocus"
+	},
+	{
+		"key": "x",
+		"command": "filesExplorer.cut",
+		"when": "filesExplorerFocus && !inputFocus"
+	},
+	{
+		"key": "p",
+		"command": "filesExplorer.paste",
+		"when": "filesExplorerFocus && !inputFocus"
+	},
+	// TEXT EDITING
+	{
+		"key": "alt+shift+j",
+		"command": "editor.action.copyLinesDownAction",
+		"when": "editorTextFocus && !editorReadonly && vim.active && vim.mode == 'Visual' || vim.mode == 'VisualLine'"
+	},
+	{
+		"key": "alt+ctrl+shift+j",
+		"command": "editor.action.copyLinesDownAction",
+		"when": "editorTextFocus && inputFocus && !editorReadonly && vim.active && vim.mode == 'Insert'"
+	},
+	{
+		"key": "alt+shift+k",
+		"command": "editor.action.copyLinesUpAction",
+		"when": "editorTextFocus && !editorReadonly && vim.active && vim.mode == 'Visual' || vim.mode == 'VisualLine'"
+	},
+	{
+		"key": "alt+ctrl+shift+k",
+		"command": "editor.action.copyLinesUpAction",
+		"when": "editorTextFocus && inputFocus && !editorReadonly && vim.active && vim.mode == 'Insert'"
+	},
+	// EXPAND REGION
+	{
+		"key": "ctrl+=",
+		"command": "expand_region",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+w",
+		"command": "-expand_region",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+-",
+		"command": "undo_expand_region",
+		"when": "editorHasSelection && editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+w",
+		"command": "-undo_expand_region",
+		"when": "editorHasSelection && editorTextFocus"
+	},
+	// TURBO CONSOLE LOG
+	{
+		"key": "ctrl+i",
+		"command": "turboConsoleLog.displayLogMessage"
+	},
 	// EXTRA
 	{
 		"key": "ctrl+shift+5",
@@ -68,5 +130,38 @@
 	{
 		"key": "ctrl+z",
 		"command": "workbench.action.toggleZenMode"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "selectNextSuggestion",
+		"when": "suggestWidgetVisible"
+	},
+	{
+		"key": "ctrl+k",
+		"command": "selectPrevSuggestion",
+		"when": "suggestWidgetVisible"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "workbench.action.quickOpenSelectNext",
+		"when": "inQuickOpen"
+	},
+	{
+		"key": "ctrl+k",
+		"command": "workbench.action.quickOpenSelectPrevious",
+		"when": "inQuickOpen"
+	},
+	// OTHER
+	{
+		"key": "ctrl+=",
+		"command": "-workbench.action.zoomIn"
+	},
+	{
+		"key": "ctrl+shift+-",
+		"command": "workbench.action.zoomOut"
+	},
+	{
+		"key": "ctrl+-",
+		"command": "-workbench.action.zoomOut"
 	}
 ]
